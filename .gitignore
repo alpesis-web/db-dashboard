@@ -6,3 +6,6 @@
 *.swn
 *.swm
 *.swp
+
+# sqlite
+*.sqlite3
