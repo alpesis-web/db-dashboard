@@ -12,3 +12,6 @@
 
 # db
 migrations
+
+# os
+.DS_Store
