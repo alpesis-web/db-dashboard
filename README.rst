@@ -2,7 +2,7 @@
 Lucky Dog
 ##############################################################################
 
-Lucky Dog is a financial management system.
+Lucky Dog is a financial analytics platform.
 
 ==============================================================================
 Getting Started
