@@ -19,6 +19,6 @@ from django.urls import include
 
 
 urlpatterns = [
-    path('dbentry/', include('dbentry.urls')),
+    path('cashflow/', include('cashflow.urls')),
     path('admin/', admin.site.urls),
 ]
