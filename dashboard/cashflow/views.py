@@ -28,7 +28,7 @@ def income(request):
 
 
 def expensedict(request):
-    expense_dict = ExpenseDict.objects.order_by('-item')[:]
+    expense_dict = ExpenseDict.objects.order_by('itemid')[:]
     context = {
         'table_name': "Expense Dictionary",
         'item_list': expense_dict
@@ -36,7 +36,7 @@ def expensedict(request):
     return render(request, "dict.html", context)
 
 def incomedict(request):
-    income_dict = IncomeDict.objects.order_by('-item')[:]
+    income_dict = IncomeDict.objects.order_by('itemid')[:]
     context = {
         'table_name': "Income Dictionary",
         'item_list': income_dict
