@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.db.models import Sum
+
 
 from .models import Income
 from .models import Expense
@@ -42,3 +44,21 @@ def incomedict(request):
         'item_list': income_dict
     }
     return render(request, "dict.html", context)
+
+
+def expense_monthly(request):
+    expense_monthly = Expense.objects.values('year', 'month').annotate(Sum('amount'))
+    context = {
+        "table_name": "Expense Monthly",
+        "item_monthly": expense_monthly
+    }
+    return render(request, "report_monthly.html", context)
+
+
+def income_monthly(request):
+    income_monthly = Income.objects.values('year', 'month').annotate(Sum('amount'))
+    context = {
+        "table_name": "Income Monthly",
+        "item_monthly": income_monthly
+    }
+    return render(request, "report_monthly.html", context)
