@@ -1,0 +1,21 @@
+<h2>{{ table_name }}</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>ItemID</th>
+    <th>Item</th>
+  </tr>
+
+  {% if item_list %}
+  {% for item in item_list %}
+  <tr>
+    <td>{{ item.id }}</td>
+    <td>{{ item.itemid }}</td>
+    <td>{{ item.item }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+    <p>No income available.</p>
+  {% endif %}
+</table>
