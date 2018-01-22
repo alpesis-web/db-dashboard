@@ -1,0 +1,19 @@
+<h2>{{ table_name }}</h2>
+
+<table>
+  <tr>
+    <th>ItemID</th>
+    <th>Total</th>
+  </tr>
+
+  {% if item_summary %}
+  {% for item in item_summary %}
+  <tr>
+    <td>{{ item.itemid }}</td>
+    <td>{{ item.amount__sum }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+    <p>No item available.</p>
+  {% endif %}
+</table>

@@ -48,6 +48,16 @@ def expense_yearly(request):
     }
     return render(request, "report_yearly.html", context)
 
+
+def expense_categories(request):
+    expense_categories = Expense.objects.values('itemid').annotate(Sum('amount'))
+    context = {
+        "table_name": "Expense Categories",
+        "item_summary": expense_categories
+    }
+    return render(request, "report_categories.html", context)
+
+
 # ----------------------------------------------------------------------------
 
 def income(request):
@@ -84,3 +94,12 @@ def income_yearly(request):
         "item_yearly": income_yearly
     }
     return render(request, "report_yearly.html", context)
+
+
+def income_categories(request):
+    income_categories = Income.objects.values('itemid').annotate(Sum('amount'))
+    context = {
+        "table_name": "Income Categories",
+        "item_summary": income_categories
+    }
+    return render(request, "report_categories.html", context)
