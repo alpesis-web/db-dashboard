@@ -1,0 +1,21 @@
+<h2>{{ table_name }}</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Year</th>
+    <th>Total</th>
+  </tr>
+
+  {% if item_yearly %}
+  {% for item in item_yearly %}
+  <tr>
+    <td>{{ item.id }}</td>
+    <td>{{ item.year }}</td>
+    <td>{{ item.amount__sum }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+    <p>No item available.</p>
+  {% endif %}
+</table>
